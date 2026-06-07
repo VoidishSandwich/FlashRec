@@ -8,8 +8,8 @@ const router = createBrowserRouter([{
         path: '/',
         element: <MainLayout />,
         children: [{
-            path: '',
-            element: <Navigate to="/home" replace />,
+                path: '', // 使用者一進到 /FlashRec/ 起點
+                element: <Navigate to="/home" replace />, // 瞬間推進到 /home
         }, {
             path: 'home',
             element: <Home />,
@@ -17,17 +17,12 @@ const router = createBrowserRouter([{
             path: 'settings',
             element: <Settings />,
         }, {
-            path: "*",
-            element: <Error404 />
-        }],
-    }, {
-        path: '*',
-        element: <Navigate to="home" replace />,
-    },
+            path: '*',
+            element: <Error404 />,
+        }]},
 ], {
-  basename: '/FlashRec'
+    basename: '/FlashRec' // 100% 鎖定專案子路徑
 });
-
 
 export default function App() {
     return <RouterProvider router={router} />;
