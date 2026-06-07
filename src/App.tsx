@@ -5,23 +5,25 @@ import {Settings} from './pages/Settings';
 import {Error404} from './pages/404';
 
 const router = createBrowserRouter([{
-    path: '/',
-    element: <MainLayout />, // 🚀 外殼套在這裡
-    children: [{
-        path: '', // 當網址是 / 時，自動導向 /home
+        path: '/',
+        element: <MainLayout />, // 🚀 外殼套在這裡
+        children: [{
+            path: '', // 當網址是 / 時，自動導向 /home
+            element: <Navigate to="/home" replace />,
+        }, {
+            path: 'home', // 網址會自動組合成 /home
+            element: <Home />,
+        }, {
+            path: 'settings', // 網址會自動組合成 /settings
+            element: <Settings />,
+        }, {
+            path: "*",
+            element: <Error404 />
+        }],
+    }, {
+        path: '*',
         element: <Navigate to="/home" replace />,
-      }, {
-        path: 'home', // 網址會自動組合成 /home
-        element: <Home />,
-      }, {
-        path: 'settings', // 網址會自動組合成 /settings
-        element: <Settings />,
-      }, {
-        path: "*",
-        element: <Error404 />
-      }
-    ],
-  },
+    },
 ]);
 
 export default function App() {
