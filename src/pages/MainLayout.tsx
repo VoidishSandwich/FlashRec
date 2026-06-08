@@ -20,7 +20,11 @@ export function MainLayout() {
         color: '#fff',
         height: '60px',
         fontFamily: 'sans-serif',
-        boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
+        boxShadow: '0 4px 20px rgba(255, 255, 255, 0.125)',//'0 2px 50px rgba(0,0,0,0.3)',
+
+        position: 'sticky',
+        top: 0,
+        zIndex: 1000, 
     };
 
     const [isHovered, setIsHovered] = useState(false);
@@ -38,7 +42,7 @@ export function MainLayout() {
     });
 
     const loginBtnStyle: React.CSSProperties = {
-        padding: '7px 22px',
+        padding: '6px 16px',
         borderRadius: '25px',
         border: 'none',
         marginLeft: '20px',
@@ -99,41 +103,4 @@ export function MainLayout() {
             </main>
         </div>
     );
-
-    // return (
-    //     <div>
-    //         {/* 🌐 永遠固定在最頂端的 Topbar */}
-    //         <nav style={navStyle}>
-    //             <img src={flashcardIcon} style={{ 
-    //                 height: '75%', 
-    //                 aspectRatio: '1 / 1', 
-    //                 objectFit: 'contain',
-    //                 width: 'auto',       // 讓寬度自動根據 aspect-ratio 計算，不要寫 0
-    //                 maxWidth: '100%',   // 限制最大寬度
-    //                 flexShrink: 1       // 允許在彈性盒子中縮小
-    //             }}/>
-    //             <h2 style={{ margin: 0, cursor: 'pointer', fontSize: '20px' }} onClick={() => navigate('/home')}>
-    //                 FlashRec
-    //             </h2>
-    //             <div>
-    //                 <button style={linkStyle('/home')} onClick={() => navigate('/home')}>Home</button>
-    //                 <button style={linkStyle('/settings')} onClick={() => navigate('/settings')}>Dashboard</button>
-    //                 <button 
-    //                     style = {loginBtnStyle}
-    //                     onClick={function(){
-    //                         navigate('/home')
-    //                     }}
-    //                     onMouseEnter={()=>setIsHovered(true)}
-    //                     onMouseLeave={()=>setIsHovered(false)}>
-    //                     Sign up
-    //                 </button>
-    //             </div>
-    //         </nav>
-
-    //         {/* ⬇️ 下方這個區域會根據網址，動態渲染出 Home 或 Settings 的內文 */}
-    //         <main style={{ padding: '20px', fontFamily: 'sans-serif' }}>
-    //             <Outlet />
-    //         </main>
-    //     </div>
-    // );
 }
