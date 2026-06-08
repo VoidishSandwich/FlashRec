@@ -8,8 +8,8 @@ const router = createBrowserRouter([{
         path: '/',
         element: <MainLayout />,
         children: [{
-                path: '', // 使用者一進到 /FlashRec/ 起點
-                element: <Navigate to="/home" replace />, // 瞬間推進到 /home
+                path: '', 
+                element: <Navigate to="/home" replace />, 
         }, {
             path: 'home',
             element: <Home />,

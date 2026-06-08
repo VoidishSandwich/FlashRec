@@ -7,7 +7,7 @@ export function Error404() {
 
     const [isHovered, setIsHovered] = useState(false);
     const ButtonStyle = {
-        padding: '6px 20px',
+        padding: '8px 25px',
         borderRadius: '25px',
         border: 'none',
         
@@ -16,8 +16,8 @@ export function Error404() {
 
         cursor: 'pointer',
         
-        backgroundColor: isHovered ? '#114c6770' : '#0a2f4755',
-        color: isHovered ? '#121214' : '#fff',
+        backgroundColor: isHovered ? '#0c6792da' : '#125f93',
+        color: '#fff',
         
         transform: isHovered ? 'scale(1.05)' : 'scale(1)',
         boxShadow: isHovered 
@@ -29,7 +29,7 @@ export function Error404() {
 
     return (
         <div style={{ textAlign: 'center', marginTop: '100px' }}>
-            <h1 style={{fontSize: '32px', color: '#fff'}}>Oops.. There is nothing here! (oi)</h1>
+            <h1 style={{fontSize: '30px', color: '#fff'}}>Oops.. There is nothing here! (oi)</h1>
             <button 
                 style = {ButtonStyle}
                 onClick={function(){
